@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Third-party vendored dependency — clone it yourself (see SETUP.md)
+_deps/
+
+# Model weights and assets are not redistributed — download per SETUP.md
+models/
+assets/
+
+# Media / data / intermediate artifacts (clips, frames, streams, reports)
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.npz
+*.npy
+*.pkl
+*.json

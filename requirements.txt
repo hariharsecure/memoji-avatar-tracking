@@ -1,0 +1,17 @@
+# Core dependencies for the avatar-tracking pipeline.
+# Targets Python 3.11 on Apple Silicon (MPS). No CUDA required.
+# Pin versions to taste; the ranges below reflect what the code was developed against.
+
+numpy>=1.24
+scipy>=1.10
+opencv-python>=4.8
+mediapipe>=0.10.9
+torch>=2.2
+torchvision>=0.17
+ultralytics>=8.1
+trimesh>=4.0
+pyrender>=0.1.45
+onnxruntime>=1.17
+matplotlib>=3.7
+pyyaml>=6.0
+librosa>=0.10        # only used by the audio-prior gate study
