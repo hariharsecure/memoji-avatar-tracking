@@ -83,11 +83,16 @@ what the code expects (the `*` scripts reference these literal paths).
 | `canonical_face_model.obj` | The MediaPipe canonical face mesh (468/478-vertex topology) used as the fallback pose substrate. Export from the MediaPipe canonical face model. |
 | `emoji_head.glb` | A glTF/GLB head mesh used as the avatar overlay primitive. Any rigged head GLB with an equivalent topology can be substituted. |
 
-## 6. Optional vendored dependency: 3DDFA_V2 → `_deps/`
+## 6. Vendored dependency: 3DDFA_V2 → `_deps/`
 
-Only the optional dense-identity / BFM experiment
-(`identity_bfm_solve_v1.py`, `bfm_avatar_overlay_v1.py`) needs this; the core
-tracking heads do **not**.
+Required for two parts of the repo: **(a)** the `pipeline_mesh_cascade_v4.py`
+step — which is on the full estimator path (**Path B** in §9) and calls a
+3DDFA-based profile fitter at startup; and **(b)** the optional dense-identity /
+BFM experiment (`identity_bfm_solve_v1.py`, `bfm_avatar_overlay_v1.py`). The
+quick "see it work" path (**Path A**: `pipeline_memoji_rig_v15.py` →
+`wireframe_overlay_v1.py`) does **not** need it. If you run Path B, install
+3DDFA_V2 first or `mesh_cascade_v4` stops with a clear "3DDFA_V2 repo is missing"
+error.
 
 ```bash
 git clone https://github.com/cleardusk/3DDFA_V2 _deps/3DDFA_V2
